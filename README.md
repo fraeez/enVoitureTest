@@ -55,3 +55,9 @@ L'ensemble des fichiers permettant le lancement de l'application via la commande
 Si vous avez identifié des choses imparfaites dans votre code (par manque de temps par exemple), ajoutez les au README pour qu'on puisse en discuter!
 
 Bonne chance !
+
+### Point d'améliorations:
+
+Tous les textes sont en dur, pas ready pour i18n.
+Les couleurs des chips sont passés en parametre et non récupérée depuis un theme.
+Globalement le CSS n'est pas propre
