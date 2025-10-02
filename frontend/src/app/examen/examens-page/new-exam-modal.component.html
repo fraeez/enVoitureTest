@@ -1,0 +1,73 @@
+<div class="container">
+    <h1 mat-dialog-title>Nouvel Examen</h1>
+    <form #examenForm="ngForm" (ngSubmit)="onSave(examenForm)">
+        <div mat-dialog-content>
+            <p>Merci de renseigner les détails du nouvel examen:</p>
+
+            <mat-form-field appearance="fill" class="input-name">
+                <mat-label>Prénom de l'étudiant</mat-label>
+                <input matInput name="first_name" [(ngModel)]="data.examen.student.first_name" required>
+                @if(examenForm.submitted && !data.examen.student.first_name) {
+                <mat-error>
+                    Le prénom est requis.
+                </mat-error>
+                }
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="input-name">
+                <mat-label>Nom de l'étudiant</mat-label>
+                <input matInput name="last_name" [(ngModel)]="data.examen.student.last_name" required>
+                @if(examenForm.submitted && !data.examen.student.last_name) {
+                <mat-error>
+                    Le nom est requis.
+                </mat-error>
+                }
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="input-name">
+                <mat-label>Lieu de rendez-vous</mat-label>
+                <input matInput name="meeting_point" [(ngModel)]="data.examen.meeting_point">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="input-name">
+                <mat-label>Status</mat-label>
+                <mat-select name="status" [(ngModel)]="data.examen.status">
+                    @for (status of examenStatuses; track $index) {
+                    <mat-option [value]="status">
+                        {{ status }}
+                    </mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Date de l'examen</mat-label>
+                <input matInput [matDatepicker]="datepicker" [(ngModel)]="data.examen.date" name="date">
+                <mat-datepicker #datepicker />
+                <mat-datepicker-toggle [for]="datepicker" matSuffix />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Heure de l'examen</mat-label>
+                <input matInput [matTimepicker]="timepicker" [(ngModel)]="data.examen.date" name="time"
+                    [ngModelOptions]="{updateOn: 'blur'}">
+                <mat-timepicker #timepicker />
+                <mat-timepicker-toggle [for]="timepicker" matSuffix />
+            </mat-form-field>
+
+
+            @if (isSubmitting()) {
+            <div class="spinner-overlay">
+                <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+            </div>
+            }
+        </div>
+        <div mat-dialog-actions class="buttons-container">
+            <mat-error *ngIf="examenForm.submitted && errorAPI()">
+                Une erreur est survenue lors de la création de l'examen.
+            </mat-error>
+            <button mat-button (click)="onCancel()">Annuler</button>
+            <button mat-button type="submit" cdkFocusInitial>Enregistrer</button>
+        </div>
+    </form>
+</div>

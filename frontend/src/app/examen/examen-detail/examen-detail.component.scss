@@ -1,0 +1,46 @@
+.examen-detail {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.items {
+  flex-basis: 20%;
+  margin: 0.5rem 0;
+}
+
+.chips-set {
+  margin-top: 0.35rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.orange {
+  background-color: #f2ece7  !important;
+}
+
+.red {
+  background-color: #f3edef  !important;
+}
+
+.grey {
+  background-color: #edeff0  !important;
+}
+
+.green {
+  background-color: #e5f2ef  !important;
+}
+
+mat-chip {
+  margin: 0 !important;
+}
+
+:host ::ng-deep .mat-mdc-standard-chip .mdc-evolution-chip__action--primary::before{ 
+    border: 1px solid transparent !important;
+}

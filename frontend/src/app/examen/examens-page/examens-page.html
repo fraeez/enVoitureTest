@@ -1,0 +1,17 @@
+<div class="examens-page">
+    <div class="flex space-between">
+        <div>
+            <h1>Mes examens</h1>
+            <p>{{ examLabel() }}</p>
+        </div>
+        <div class="button-container">
+            <button mat-raised-button style="background-color: #c26a3f; color: white;" (click)="openNewExamModal()">
+                Organiser un examen
+            </button>
+        </div>
+    </div>
+    @for (exam of examens(); track $index) {
+    <div>
+        <app-examen-detail [examen]="exam"></app-examen-detail>
+    </div>
+    }

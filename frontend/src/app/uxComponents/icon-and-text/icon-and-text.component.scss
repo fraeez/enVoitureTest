@@ -1,0 +1,17 @@
+.icon-and-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  mat-icon {
+    font-size: 24px;
+  }
+
+  span {
+    font-size: 16px;
+  }
+
+  .grey {
+    color: #a5a8ac;
+  }
+}

@@ -1,0 +1,22 @@
+<div class="examen-detail">
+  <div class="items">
+    <app-icon-and-text class="bold" icon="person" [text]="formatName(examen.student)"></app-icon-and-text>
+  </div>
+  <div class="items">
+    <app-icon-and-text icon="location_on" [text]="examen.meeting_point || ''"></app-icon-and-text>
+  </div>
+  <div class="items">
+    <app-icon-and-text icon="date_range" text="{{ examen.date | date:'shortDate' }}"></app-icon-and-text>
+  </div>
+  <div class="items"><app-icon-and-text icon="schedule"
+      text="{{ (examen.date | date:'shortTime')?.replace(':','h')}}"></app-icon-and-text>
+  </div>
+  <div class="items chips-set">
+    <mat-chip-set>
+      <mat-chip [class]="getChipClass(examen.status)">
+        <app-icon-and-text [color]="getColor(examen.status)" [icon]="getIcon(examen.status)"
+          [text]="examen.status"></app-icon-and-text>
+      </mat-chip>
+    </mat-chip-set>
+  </div>
+</div>

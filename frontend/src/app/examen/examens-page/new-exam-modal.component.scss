@@ -1,0 +1,19 @@
+/* Styles for the New Exam Modal Component */
+
+.container {
+    padding: 16px;
+
+    mat-form-field {
+        padding-left: 10px;
+    }
+
+    .input-name {
+        width: 240px;
+    }
+
+    .buttons-container {
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+    }
+}

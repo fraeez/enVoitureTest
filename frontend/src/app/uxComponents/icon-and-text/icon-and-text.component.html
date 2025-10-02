@@ -1,0 +1,8 @@
+<div class="icon-and-text">
+    <mat-icon [class]="{'grey': !text}" [style]="color ? {'color': color} : {}">{{ icon }}</mat-icon>
+    @if (text) {
+    <span [style]="color ? {'color': color} : {}">{{ text }}</span>
+    } @else {
+    <span><i class="grey">En attente</i></span>
+    }
+</div>
